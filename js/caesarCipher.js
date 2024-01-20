@@ -8,8 +8,13 @@ function caesarCipher (string,key) {
 }
 
 function changeChar(char, key) {
-    let charCode = checkCode(char.charCodeAt() + key)
-    return String.fromCharCode(charCode)
+    if (char.charCodeAt() > 90 || char.charCodeAt() < 65) {
+        return char
+    } else {
+        let charCode = checkCode(char.charCodeAt() + key)
+        return String.fromCharCode(charCode)
+    }
+    
 }
 
 function checkCode(charCode) {
